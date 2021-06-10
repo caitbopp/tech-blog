@@ -4,13 +4,17 @@
     box-sizing: border-box;
 }
 
-:root {
-    --brown: #221010;
-    --light-green: #c4d6bd;
+/* :root {
     --gray: #A7A7A7;
+} */
+
+header {
+    background-color: #221010;
 }
 
-
+main {
+    background-color:#c4d6bd ;
+}
 
 
 .hidden {
