@@ -1,0 +1,18 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --brown: #221010;
+    --light-green: #c4d6bd;
+    --gray: #A7A7A7;
+}
+
+
+
+
+.hidden {
+    display: none;
+}
