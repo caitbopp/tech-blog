@@ -16,14 +16,17 @@
 </div>
 
 
-<!-- Do I add in another hidden card to display previously written posts? -->
+<!-- Showing previously written posts and includes link to edit post -->
 <div class="card hidden">
 {{#each posts as |post|}}
   <div class="card-header">
-      <h5 class="post-header">{{post.title}}</h5>
+     <a href="/dashboard/edit/{{post.id}}"><h5 class="post-header">{{post.title}}</h5></a>
       <span class="post-byline">Posted by {{username}} on {{date_created}}</span>
   <div class="card-body">
     <p class="card-text">{{post.content}}</p>
   </div>
   {{/each}}
 </div>
+
+
+
