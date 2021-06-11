@@ -3,14 +3,14 @@ const { Post, Comment, User } = require('../models');
 const withAuth = require('../utils/auth');
 
 // Route for /  (delivers homepage)
-router.get('/', withAuth, async (req, res) => {
+router.get('/', async (req, res) => {
     try {
         const postData = await Post.findAll();
 
-        const posts = postData.get({ plain: true });
+        const posts = postData.map((post) => post.get({ plain: true }));
 
         res.render('homepage', {
-            ...posts,
+            posts,
             logged_in: req.session.logged_in
         });
     } catch (err) {
@@ -24,7 +24,7 @@ router.get('/', withAuth, async (req, res) => {
 
 // DO I need to add Comment model in the below?
 
-router.get('/post/:id', async (req, res) => {
+router.get('/post/:id', withAuth, async (req, res) => {
     try {
         const postData = await Post.findByPk(req.params.id, {
             include: [
@@ -45,3 +45,6 @@ router.get('/post/:id', async (req, res) => {
         res.status(500).json(err);
       }
     });
+
+
+    module.exports = router;
