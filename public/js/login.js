@@ -43,6 +43,11 @@ const loginFormHandler = async (event) => {
       }
     }
   };
+
+
+  // $(".new-post").click(function() {
+//     $(".create-new-post").removeClass("hidden");
+// })
   
   document
     .querySelector('.login-form')
