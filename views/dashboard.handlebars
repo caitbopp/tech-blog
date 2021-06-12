@@ -2,35 +2,34 @@
 {{#each posts as |post|}}
 <div class="previous-posts card">
   <div class="card-header">
-     <a href="/dashboard/edit/{{post.id}}"><h5 class="post-header">{{post.title}}</h5></a>
-      <span class="post-byline">Posted by {{username}} on {{date_created}}</span>
-  <div class="card-body">
-    <p class="card-text">{{post.content}}</p>
+    <a href="/dashboard/edit/{{post.id}}">
+      <h5 class="post-header">{{post.title}}</h5>
+    </a>
+    <span class="post-byline">Posted by {{username}} on {{date_created}}</span>
+    <div class="card-body">
+      <p class="card-text">{{post.content}}</p>
+    </div>
   </div>
 </div>
-</div>
-  {{/each}}
+{{/each}}
 
 <div class="add-new-post text-center">
-<button type="submit" class="btn new-post text-center">+ New Post</button>
+  <button type="submit" class="btn new-post text-center">+ New Post</button>
 </div>
 
 <div class="create-new-post card">
-    <div class="card-header">
-        Create New Post
+  <div class="card-header">
+    Create New Post
+  </div>
+  <form class="new-post-form card-body">
+    <div class="form-group">
+      <label for="post-title">Title</label>
+      <input class="form-input" type="text" id="post-title" />
     </div>
-    <form class="new-post-form card-body">
-        <label for="post-title">Title</label>
-        <input class="form-input" type="text" id="post-title"/>
-
-        <label for="post-content">Content</label>
-        <input class="form-input" type="text" id="post-content"/>
-
-        <button type="submit" class="btn btn-dark btn-lg btn-block">Create</button>
-    </form>
+    <div class="form-group">
+      <label for="post-content">Content</label>
+      <input class="form-input" type="text" id="post-content" />
+    </div>
+    <button type="submit" class="btn btn-dark btn-lg btn-block">Create</button>
+  </form>
 </div>
-
-
-
-
-
