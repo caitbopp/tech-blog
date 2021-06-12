@@ -2,16 +2,25 @@
     {
         "title": "Mini Project 28 - models issues",
         "content": "Hi everyone! I'm having trouble with setting up my models in the Mini-Project 28. Has anyone had success with this?",
-        "date_created": "2021-06-09"
+        "date_created": "2021-06-09",
+        "user_id": 1
     },
     {
         "title": "API Routes question",
         "content": "I'm working on my homework and my api routes are connected properly but not sure where to go next. Anybody here that could help?",
-        "date_created": "2021-06-06"
+        "date_created": "2021-06-06",
+        "user_id": 2
     },
     {
         "title": "ISO New Laptop",
         "content": "About to start a coding bootcamp and need a new laptop. Any recommendations?",
-        "date_created": "2021-05-24"
+        "date_created": "2021-05-24",
+        "user_id": 3
+    },
+    {
+        "title": "TEST",
+        "content": "About to start a coding bootcamp and need a new laptop. Any recommendations?",
+        "date_created": "2021-05-25",
+        "user_id": 3
     }
 ]

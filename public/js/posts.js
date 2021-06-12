@@ -19,6 +19,9 @@ const addPost = async (event) => {
     }
 };
 
+// $(".new-post").click(function() {
+//     $(".create-new-post").removeClass("hidden");
+// })
 
 
 
