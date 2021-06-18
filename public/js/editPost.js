@@ -24,19 +24,26 @@ const editPost = async (event) => {
     }
 };
 
-// const showCreatePost = (event) => {
-//     event.preventDefault();
-//     console.log('I was clicked!');
-//     document.querySelector('.create-new-post').classList.remove('hidden')
-// };
+const deletePost = async (event) => {
+    event.preventDefault();
+    const id = event.target.value;
 
+    const response = await fetch(`/api/posts/edit/${id}`, {
+        method: 'DELETE'
+    });
 
+    if (response.ok) {
+        document.location.replace('/dashboard');
+    } else {
+        alert(response.statusText);
+    }
+};
 
 
 document
     .querySelector('.update-btn')
     .addEventListener('click', editPost);
 
-// document
-//     .querySelector('.delete-btn')
-//     .addEventListener('submit', showCreatePost);
+document
+    .querySelector('.delete-btn')
+    .addEventListener('click', deletePost);
