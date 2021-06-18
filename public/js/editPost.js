@@ -1,15 +1,17 @@
-const addPost = async (event) => {
+const editPost = async (event) => {
     event.preventDefault();
 
     const title = document.querySelector('#post-title').value.trim();
     const content = document.querySelector('#post-content').value.trim();
+    const id = event.target.value;
 
     console.log(title);
     console.log(content);
+    console.log(id);
 
     if (title && content) {
-        const response = await fetch('/api/posts', {
-            method: 'POST',
+        const response = await fetch(`/api/posts/edit/${id}`, {
+            method: 'PUT',
             body: JSON.stringify({ "title": title, "content": content }),
             headers: { 'Content-Type': 'application/json' },
         });
@@ -22,19 +24,19 @@ const addPost = async (event) => {
     }
 };
 
-const showCreatePost = (event) => {
-    event.preventDefault();
-    console.log('I was clicked!');
-    document.querySelector('.create-new-post').classList.remove('hidden')
-};
+// const showCreatePost = (event) => {
+//     event.preventDefault();
+//     console.log('I was clicked!');
+//     document.querySelector('.create-new-post').classList.remove('hidden')
+// };
 
 
 
 
 document
-    .querySelector('.new-post-form')
-    .addEventListener('submit', addPost);
+    .querySelector('.update-btn')
+    .addEventListener('click', editPost);
 
-document
-    .querySelector('.new-post')
-    .addEventListener('click', showCreatePost);
+// document
+//     .querySelector('.delete-btn')
+//     .addEventListener('submit', showCreatePost);

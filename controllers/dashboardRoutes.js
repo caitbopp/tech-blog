@@ -28,24 +28,20 @@ router.get('/', withAuth, async (req, res) => {
 // Route for /dashboard/edit/:id    (editing individual posts)
 // Deliver editPost.handlebars page 
 
-router.put('/edit/:id', async (re, res) => {
+router.get('/edit/:id', async (req, res) => {
     try {
-        const editedPost = await Post.update(req.body,
-            {
-                where: {
-                    user_id: req.params.id,
-                },
-            });
+        const editedPost = await Post.findByPk(req.params.id);
+        const post = editedPost.get({ plain: true });
+        console.log(post);
 
-        if (!editedPost) {
-            res.status(404).json({ message: 'No post found with this id!' });
-            return;
-        }
-
-        res.status(200).json(editedPost);
+        res.render('editPost', {
+            post,
+            logged_in: req.session.logged_in
+        });
     } catch (err) {
         res.status(500).json(err);
     }
+
 });
 
 module.exports = router;

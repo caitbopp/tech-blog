@@ -1,8 +1,3 @@
-<!-- 
-    1. THe post itself
-    2. with the ability to update and delete
--->
-
 <div class="create-new-post card">
   <div class="card-header">
     Edit Post
@@ -10,15 +5,15 @@
   <form class="new-post-form card-body">
     <div class="form-group">
       <label for="post-title">Title</label>
-      <input class="form-input" type="text" id="post-title" />
+      <input class="form-input" type="text" id="post-title" value="{{post.title}}"/>
     </div>
     <div class="form-group">
       <label for="post-content">Content</label>
-      <input class="form-input" type="text" id="post-content" />
+      <textarea class="form-input" type="text" cols="50" rows="4" id="post-content">{{post.content}}</textarea>
     </div>
-    <button type="submit" class="btn btn-dark btn-lg btn-block">Update Post</button>
-    <button type="submit" class="btn btn-dark btn-lg btn-block">Delete</button>
+    <button type="submit" class="btn btn-dark btn-lg btn-block update-btn" value={{post.id}}>Update Post</button>
+    <button type="submit" class="btn btn-dark btn-lg btn-block delete-btn" value={{post.id}}>Delete</button>
   </form>
 </div>
 
-  <script src="/js/posts.js"></script>
+  <script src="/js/editPost.js"></script>
