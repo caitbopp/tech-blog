@@ -1,29 +1,31 @@
 {{#if logged_in}}
 {{#each posts as |post| }}
-<div class="card">
+<div class="all-posts card">
   <div class="card-header">
     <a href="/post/{{post.id}}">
       <h5 class="post-header">{{post.title}}</h5>
     </a>
-    <span class="post-byline">Posted by {{username}} on {{date_created}}</span>
-    <div class="card-body">
-      <p class="card-text">{{post.content}}</p>
-    </div>
+    <span class="justify-content-end">Posted by {{post.username}} on {{format_date post.date_created}}</span>
+  </div>
+  <div class="card-body">
+    <p class="card-text">{{post.content}}</p>
   </div>
 </div>
 {{/each}}
 
 {{else}}
 {{#each posts as |post| }}
-<div class="card">
+<div class="all-posts card">
+
   <div class="card-header">
     <h5 class="post-header">{{post.title}}</h5>
-    <span class="post-byline">Posted by {{username}} on {{date_created}}</span>
-    <div class="card-body">
-      <p class="card-text">{{post.content}}</p>
-    </div>
-
+    <span class="justify-content-end">Posted by {{post.username}} on {{format_date post.date_created}}</span>
   </div>
+
+  <div class="card-body">
+    <p class="card-text">{{post.content}}</p>
+  </div>
+
 </div>
 {{/each}}
 

@@ -1,2 +1,27 @@
 <!-- 1. A single post with comments attached to it if any
     2. Ability to comment on post -->
+<div class="previous-posts card">
+  <div class="card-header">
+      <h5 class="post-header">{{title}}</h5>
+    </a>
+    <span class="post-byline">Posted by {{username}} on {{format_date date_created}}</span>
+    </div>
+    <div class="card-body">
+      <p class="card-text">{{content}}</p>
+    </div>
+  </div>
+
+  <div class="create-new-post card">
+  <div class="card-header">
+    Comment
+  </div>
+  <form class="new-post-form card-body">
+    <div class="form-group">
+      <label for="post-content">Content</label>
+      <textarea class="form-input" type="text" cols="50" rows="4" id="post-content"></textarea>
+    </div>
+    <button type="submit" class="btn btn-dark btn-lg btn-block update-btn">Add Comment</button>
+  </form>
+</div>
+
+  <script src="/js/posts.js"></script>
