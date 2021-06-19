@@ -15,9 +15,11 @@ npm i
 ```
 
 ## Usage
-Express, express-handlebars, MySQL2, DOTENV, Sequelize, and bcrypt are required to use the Tech Blog.
+Express, express-handlebars, MySQL2, DOTENV, Sequelize, and bcrypt are required to use the Tech Blog. To begin, run npm run seed, then npm start.
 
-<!-- [Please click here](https://youtu.be/nhwjz9xSEMQ/) to view a recording of my project. -->
+A linked to my deployed page can be found here: [Please click here](https://TEST/).
+
+<img src="./public/assets/project_screenshot.png">
 
 
 ## License
