@@ -44,16 +44,17 @@ const loginFormHandler = async (event) => {
     }
   };
 
-
-  // $(".new-post").click(function() {
-//     $(".create-new-post").removeClass("hidden");
-// })
+  const signUp = (event) => {
+    event.preventDefault();
+    console.log('I was clicked!');
+    document.querySelector('.create-new-login').classList.remove('hidden')
+};
   
   document
     .querySelector('.login-form')
     .addEventListener('submit', loginFormHandler);
   
-  // document
-  //   .querySelector('.signup-form')
-  //   .addEventListener('submit', signupFormHandler);
+  document
+    .querySelector('.signup-form')
+    .addEventListener('submit', signupFormHandler);
   
