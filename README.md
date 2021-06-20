@@ -17,7 +17,7 @@ npm i
 ## Usage
 Express, express-handlebars, MySQL2, DOTENV, Sequelize, and bcrypt are required to use the Tech Blog. To begin, run npm run seed, then npm start.
 
-A linked to my deployed page can be found here: [Please click here](https://TEST/).
+A linked to my deployed page can be found here: [https://git.heroku.com/hidden-dawn-08659.git](https://git.heroku.com/hidden-dawn-08659.git).
 
 <img src="./public/assets/project_screenshot.png">
 
