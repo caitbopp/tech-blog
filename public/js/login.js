@@ -9,7 +9,7 @@ const loginFormHandler = async (event) => {
       // Send a POST request to the API endpoint
       const response = await fetch('/api/users/login', {
         method: 'POST',
-        body: JSON.stringify({ username, password }),
+        body: JSON.stringify({"username": username, "password": password }),
         headers: { 'Content-Type': 'application/json' },
       });
   
@@ -32,7 +32,7 @@ const loginFormHandler = async (event) => {
     if (username && email && password) {
       const response = await fetch('/api/users', {
         method: 'POST',
-        body: JSON.stringify({ username, email, password }),
+        body: JSON.stringify({ "username": username, "email": email, "password": password }),
         headers: { 'Content-Type': 'application/json' },
       });
   
@@ -44,17 +44,34 @@ const loginFormHandler = async (event) => {
     }
   };
 
-  const signUp = (event) => {
+  const showSignUp = (event) => {
     event.preventDefault();
     console.log('I was clicked!');
     document.querySelector('.create-new-login').classList.remove('hidden')
+    document.querySelector('.login-card').classList.add('hidden')
 };
+
+const showLogin = (event) => {
+  event.preventDefault();
+  console.log('I was clicked!');
+  document.querySelector('.create-new-login').classList.add('hidden')
+  document.querySelector('.login-card').classList.remove('hidden')
+};
+
+
+  document
+    .querySelector('#sign-up-btn')
+    .addEventListener('click', showSignUp);
+
+  document
+    .querySelector('#login-btn')
+    .addEventListener('click', showLogin);
   
   document
     .querySelector('.login-form')
     .addEventListener('submit', loginFormHandler);
   
   document
-    .querySelector('.signup-form')
+    .querySelector('#signup-form')
     .addEventListener('submit', signupFormHandler);
   
